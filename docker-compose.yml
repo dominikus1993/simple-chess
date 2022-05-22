@@ -1,0 +1,20 @@
+version: "3.9"
+services:
+  client:
+    image: mcr.microsoft.com/vscode/devcontainers/typescript-node:18-bullseye
+    ports:
+      - "3000:3000"
+    volumes:
+      # Mount the root folder that contains .git
+      - .:/workspace:cached
+    command: /bin/sh -c "while sleep 1000; do :; done"
+    links:
+     - server
+  server:
+    image:  mcr.microsoft.com/vscode/devcontainers/typescript-node:18-bullseye
+    ports:
+      - "9000:9000"
+    volumes:
+      # Mount the root folder that contains .git
+      - .:/workspace:cached
+    command: /bin/sh -c "while sleep 1000; do :; done"

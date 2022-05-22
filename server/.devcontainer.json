@@ -1,0 +1,21 @@
+{
+    "name": "Server",
+    "dockerComposeFile": ["../docker-compose.yml"],
+    "service": "server",
+    "shutdownAction": "none",
+    "settings": {
+    },
+  
+      // Add the IDs of extensions you want installed when the container is created.
+    "extensions": [
+      "wakatime.vscode-wakatime",
+      "GitHub.copilot",
+      "formulahendry.dotnet-test-explorer",
+      "usernamehw.errorlens",
+      "pflannery.vscode-versionlens",
+      "dbaeumer.vscode-eslint"
+    ],
+    "remoteUser": "node",
+    "forwardPorts": [5000],
+    "workspaceFolder": "/workspace/server"
+  }
